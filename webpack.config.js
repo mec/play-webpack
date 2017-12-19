@@ -14,6 +14,8 @@ module.exports = {
   /** Modules */
   module: {
     rules: [
+      /** js via babel */
+      { test: /|.js?$/, loader: 'babel-loader' },
       /** html */
       {
         test: /\.html$/,
@@ -47,6 +49,7 @@ module.exports = {
   },
   /** Plugins */
   plugins: [
+    /** extract css */
     new ExtractTextPlugin('./css/index.css'),
     /** auto inject into dist html */
     new HtmlWebpackPlugin({
